@@ -1,6 +1,5 @@
 function solution(N, stages) {
     let failRate = []
-    let answer=[]
 
     for(let i=0; i < N; i++){
         let len = stages.length
@@ -9,8 +8,5 @@ function solution(N, stages) {
     }
     failRate.sort((a,b) => b[1] - a[1]) //처음부터 2차원 배열로 push하면 바로 정렬
   
-    for(const fail of failRate){
-        answer.push(fail[0])
-    }
-    return answer
+    return failRate.map((fail) => fail[0]);
 }
